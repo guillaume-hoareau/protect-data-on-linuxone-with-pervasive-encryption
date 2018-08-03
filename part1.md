@@ -51,7 +51,7 @@ processor 1: version = FF,  identification = 233EF7,  machine = 3906
 
 **Note 2**: vx on line 4, indicates that SIMD and vector instructions are properly supported and detected.
 
-### b. Installing libica
+## b. Installing libica
 To make use of the libica hardware support for cryptographic functions, you must install the libica package. Obtain the current libica version from your distribution provider for automated installation by issuing the following command:
 ```
 root@crypt06:~# sudo apt-get install libica-utils
@@ -100,7 +100,7 @@ From the **cpuinfo** output, you can find the features that are enabled in the c
 If the features list has msa listed, it means that CPACF is enabled. Most of the distributions include a generic kernel image for the specific platform. 
 These device drivers for the generic kernel image are included as loadable kernel modules because statically compiling many drivers into one kernel causes the kernel image to be much larger. This kernel might be too large to boot on computers with limited memory.
 
-### c. Loading crypto modules
+## c. Loading crypto modules
 Let's use the **modprobe** command to load the device driver modules. Initially the Linux system is not yet configured to use  the crypto device driver modules, so you must load them manually. The cryptographic device drivers consists of multiple,
 separate modules.
 ```
@@ -114,7 +114,7 @@ root@crypt06:~# modprobe prng
 root@crypt06:~# modprobe hmac
 ```
 
-### d. Pervasive Encryption readiness assessment
+## d. Pervasive Encryption readiness assessment
 Validate that all the crypto modules are properly loaded. Please issue the following command:
 ```
 root@crypt06:~# lsmod | grep s390
@@ -171,7 +171,7 @@ root@crypt06:~# icastats
 
 Your hands-on LAB environment is now properly setup!
 
-## 4 - Enabling OpenSSL and OpenSSH to use the hardware acceleration support
+# 4 - Enabling OpenSSL and OpenSSH to use the hardware acceleration support
 
 This chapter describes how to use the cryptographic functions of the LinuxONE server to encrypt data in flight. This technique means that the data is encrypted and decrypted before and after it is transmitted. We will use OpenSSL, SCP and SFTP to demonstrate the encryption of data in flight. 
 This chapter also shows how to customize the product to use the LinuxONE hardware encryption features. This chapter includes the following sections:
@@ -180,7 +180,7 @@ This chapter also shows how to customize the product to use the LinuxONE hardwar
 - Testing Hardware Crypto functions with OpenSSL
 - Testing Hardware Crypto functions with SCP
 
-### a. Preparing to use OpenSSL
+## a. Preparing to use OpenSSL
 In the Linux system you use, OpenSSL is already installed, and the system is already enabled to use the cryptographic hardware of the LinuxONE server. We also loaded the cryptographic device drivers and the libica to use the crypto hardware. For the following steps, the following packages are required for encryption:
 - openssl
 - openssl-libs
@@ -195,14 +195,14 @@ Now all needed packages are successfully installed. At this moment only the defa
 root@crypt06:~# openssl engine -c
 (dynamic) Dynamic engine loading support
 ```
-### b. Configuring OpenSSL
+## b. Configuring OpenSSL
 To use the ibmca engine and to benefit from the Cryptographic hardware support, the configuration file of OpenSSL needs to be adjusted. To customize OpenSSL configuration to enable dynamic engine loading for ibmca, complete the following steps.
-#### b.1. Locate the OpenSSL configuration file, which in our Ubuntu 16.04.3 LTS distribution is in this subdirectory: 
+### b.1. Locate the OpenSSL configuration file, which in our Ubuntu 16.04.3 LTS distribution is in this subdirectory: 
 ```
 root@crypt06:~# ls /usr/share/doc/openssl-ibmca/examples
 ```
 
-#### b.2. Make a backup copy of the configuration file
+### b.2. Make a backup copy of the configuration file
 Locate the main configuration file of openssl. Its name is openssl.cnf. Please issue the following command:
 ```
 root@crypt06:~# ls -la /etc/ssl/openssl.cnf
@@ -219,7 +219,7 @@ root@crypt06:~# ls -al /etc/ssl/openssl.cnf*
 -rw-r--r-- 1 root root 10835 Dec  7 21:43 /etc/ssl/openssl.cnf.backup
 ```
 
-#### b.3. Append the ibmca-related configuration lines to the OpenSSL configuration file
+### b.3. Append the ibmca-related configuration lines to the OpenSSL configuration file
 ```
 root@crypt06:~# tee -a /etc/ssl/openssl.cnf < /usr/share/doc/openssl-ibmca/examples/openssl.cnf.sample
 #
@@ -276,7 +276,7 @@ default_algorithms = ALL
 #default_algorithms = RAND,RSA,CIPHERS,DIGESTS
 ```
 
-#### b.4. Append the ibmca-related configuration lines to the OpenSSL configuration file
+### b.4. Append the ibmca-related configuration lines to the OpenSSL configuration file
 The reference to the ibmca section in the OpenSSL configuration file needs to be inserted. Therefore, insert the following line as show below at the line 10.
 "openssl_conf = openssl_def"
 ```
@@ -298,7 +298,7 @@ oid_section = new_oids
 # X.509v3 extensions to use:
 ```
 
-## 5 - Checking Hardware Crypto functions
+# 5 - Checking Hardware Crypto functions
 Now that the customization of OpenSSL in done, test whether you can use the LinuxONE hardware cryptographic functions. First, let's check whether the dynamic engine loading support is enabled by default and the engine ibmca is available and used in the installation.
 ```
 root@crypt06:~# openssl engine -c
@@ -307,7 +307,7 @@ root@crypt06:~# openssl engine -c
  [RAND, DES-ECB, DES-CBC, DES-OFB, DES-CFB, DES-EDE3, DES-EDE3-CBC, DES-EDE3-OFB, DES-EDE3-CFB, AES-128-ECB, AES-192-ECB, AES-256-ECB, AES-128-CBC, AES-192-CBC, AES-256-CBC, AES-128-OFB, AES-192-OFB, AES-256-OFB, AES-128-CFB, AES-192-CFB, AES-256-CFB, SHA1, SHA256, SHA512]
 ```
 
-#### a. Testing Pervasive encryption with OpenSSL
+## a. Testing Pervasive encryption with OpenSSL
 Now openSSL is properly configured. All crypto operation passing through openSSL will be hardware accelerated if possible. Let's test it in live. Firt of all, let's have a look of the hardware crypto offload status. Please issue the following command:
 ```
 root@crypt06:~# icastats
@@ -423,7 +423,7 @@ root@crypt06:~# icastats
 **Note:** We can clearly see here the crypto offload in encryption operations. 96681976 operations were offloaded to the CPACF.
 **Note2:** We can clearly see here the crypto offload in decryption operations. 115370154 operations were offloaded to the CPACF.
 
-#### b. Testing Pervasive encryption with scp
+## b. Testing Pervasive encryption with scp
 The scp command allows you to copy files over ssh connections. This is pretty useful if you want to transport files between computers, for example to backup something. The scp command uses the ssh protocol and they are very much alike. However, there are some important differences.
 The scp command can be used in three* ways: to copy from a (remote) server to your computer, to copy from your computer to a (remote) server, and to copy from a (remote) server to another (remote) server. In the third case, the data is transferred directly between the servers; your own computer will only tell the servers what to do. These options are very useful for a lot of things that require files to be transferred
 Let's first clean the icastats monitoring. Please issue the following command:
