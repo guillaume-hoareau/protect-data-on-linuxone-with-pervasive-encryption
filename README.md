@@ -1,4 +1,4 @@
-# Protect data on LinuxONE With Pervasive Encryption
+# Protect data on LinuxONE with "Pervasive Encryption"
 Protect your data on data LinuxONE using pervasive encryption with nearly no CPU overhead.
 
 In this Code Pattern, you will build and deploy a crypto dashboard with IBM Cloud private running in the LinuxONE Community Cloud.
@@ -28,15 +28,15 @@ In this Code Pattern, the following key architecture components are required:
 
 # Included components
 
-* IBM Cloud private
-* Ubuntu https://www.ubuntu.com/
-* LinuxONE Crypto https://www.ibm.com/it-infrastructure/linuxone/capabilities/secure-cloud
+* [IBM Cloud private](https://www.ibm.com/us-en/marketplace/ibm-cloud-private/details)
+* [Ubuntu](https://www.ubuntu.com/)
+* [LinuxONE Crypto](https://www.ibm.com/it-infrastructure/linuxone/capabilities/secure-cloud)
 
 # Featured technologies
 
-* Docker
-* IBM LinuxOne
-* ELK https://www.elastic.co/fr/elk-stack
+* [Docker](https://www.docker.com/)
+* [IBM LinuxONE](https://www.ibm.com/it-infrastructure/linuxone)
+* [ELK](https://www.elastic.co/fr/elk-stack)
 
 # Steps
 
