@@ -1,5 +1,11 @@
 # Welcome to the Step 2 about starting an ELK on LinuxONE for Monitoring Cryptographic Activities
 
+Step 2 - Building and deploying ELK docker images to IBM Cloud private
+
+Part 1 - Build the Docker image
+Part 2 - Deploy the docker image to IBM Cloud private
+
+
 In this part, you will learn how to monitor captured LinuxONE crypto activity thanks to APIs. You will send these captured information to a no-slq database (Elasticsearch Database).
 
 ## What the ELK..?!
