@@ -1,12 +1,14 @@
-# Welcome to the Step 2 about starting an ELK on LinuxONE for Monitoring Cryptographic Activities
-
-Step 2 - Building and deploying ELK docker images to IBM Cloud private
-
-Part 1 - Build the Docker image
-Part 2 - Deploy the docker image to IBM Cloud private
-
+# Welcome in Step 2 about building and deploying ELK docker images to IBM Cloud private
 
 In this part, you will learn how to monitor captured LinuxONE crypto activity thanks to APIs. You will send these captured information to a no-slq database (Elasticsearch Database).
+
+## Agenda of this Step 2 is the following:
+1. What the ELK..?!
+2. What to Keep in mind about ELK?
+Build the Docker image
+2. Deploy the docker image to IBM Cloud private
+
+# ELK Stands for ElasticSearch Logstach Kibana
 
 ## What the ELK..?!
 Elasticsearch is a search engine based on Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. Official clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine followed by Apache Solr, also based on Lucene.
@@ -26,51 +28,11 @@ More information about ELK here: https://www.elastic.co
 
 The Elastic Stack is the next evolution of ELK.
 
-## 1. Seting-up an ELK infrastructure 
-An ELK stack can be implemented very easily, not matter the processor architecture.
+# Build the Docker image 
+The objective is to build a Docker image from the banking application and then deploy it to the IBM Cloud private.
 
-If you want to monitor a LinuxONE Crypto activities with an ELK running on x86, please follow the following instructions:
-- Deploying a docker ELK on Linux: https://github.com/deviantony/docker-elk
+Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build, users can create an automated build that executes several command-line instructions, step by step.
 
-If you want to monitor a LinuxONE Crypto activities with an ELK running also on LinuxONE, please follow the following instructions:
-- Building Elasticsearch on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Elasticsearch
-- Buidling Logstash on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Logstash
-- Building Kibana on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Kibana
-
-(Recommanded) If you want to monitor a LinuxONE Crypto activities after deploying a docker ELK on Linux:LinuxONE, please follow the following instructions:
-
-Required tool:
-```
-sudo apt-get install git docker docker-compose
-```
-
-Required dockerfile:
-```
-sudo git clone https://github.com/guikarai/ELK-CPACF.git
-```
-
-Building a kibana docker image for s390 architecture:
-```
-sudo docker build -t "kibana:Dockerfile" .
-```
-
-Building an elasticsearch docker image for s390 architecture:
-```
-sudo docker build -t "elasticsearch:Dockerfile" .
-```
-
-Starting up ELK:
-```
-sudo docker-compose up -d
-```
-
-Please verify that the ELK Stack is properly started issuing the following command:
-```
-root@crypt06:~# sudo docker ps -a
-CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                            NAMES
-fc2242672599        dockerelk_kibana          "/bin/bash /usr/lo..."   22 hours ago        Up 22 hours         0.0.0.0:5601->5601/tcp                           dockerelk_kibana_1
-8f87424acd61        dockerelk_elasticsearch   "/usr/local/bin/do..."   22 hours ago        Up 22 hours         0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   dockerelk_elasticsearch_1
-```
 
 ## 2. Seting-up crypto data collection
 Please, correct the default ESserverIP adress with your @IP adress according to your environment.
