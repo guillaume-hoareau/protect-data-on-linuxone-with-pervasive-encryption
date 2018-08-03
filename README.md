@@ -18,7 +18,7 @@ In this Code Pattern, the following key architecture components are required:
 * A Linux Virtual Machine provisionned in the IBM LinuxONE Community cloud
 * A Canonical Ubuntu 16.04.LTS (or later) Linux Virtual Machine
 
-[logo]: https://raw.githubusercontent.com/guikarai/ELK-CPACF/master/images/architecture-crypto-icp.png "Architecture"
+![Image of the Crypto Stack](https://raw.githubusercontent.com/guikarai/ELK-CPACF/master/images/architecture-crypto-icp.png)
 
 1. User to create first a Linux Virtual Machine on LinuxONE.
 2. User to configure the Linux cryptostack in order to benefit the hardware cryptographic acceleration.
