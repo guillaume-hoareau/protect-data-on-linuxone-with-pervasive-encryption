@@ -1,11 +1,11 @@
 # Welcome in Step 1 about enabling Linux to use hardware encryption
 
 ## Agenda of this Step 1 is the following:
-1 - Introduction to the pervasive encryption
-2 - Introduction to the Linux crypto stack
-3 - Enabling Linux to use the Hardware
-4 - Enabling OpenSSL and OpenSSH to use the hardware acceleration support
-5 - Checking Hardware Crypto functions
+1. Introduction to the pervasive encryption
+2. Introduction to the Linux crypto stack
+3. Enabling Linux to use the Hardware
+4. Enabling OpenSSL and OpenSSH to use the hardware acceleration support
+5. Checking Hardware Crypto functions
 
 # 1 - Introduction to the pervasive encryption
 Pervasive encryption is a data-centric approach to information security that entails protecting data entering and exiting the z14 platform. It involves encrypting data in-flight and at-rest to meet complex compliance mandates and reduce the risks and financial losses of a data breach. It is a paradigm shift from selective encryption (where only the data that is required to achieve compliance is encrypted) to pervasive encryption. Pervasive encryption with z14 is enabled through tight platform integration that includes Linux on IBM Z or LinuxONE following features:
