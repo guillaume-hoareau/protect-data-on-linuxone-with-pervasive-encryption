@@ -551,4 +551,4 @@ data.512M                                                           100%  512MB 
 ```
 As you can see, with 256MB/s, we increased the throughput by 50%. So, beware default settings. Make sure to use hardware accelerated ciphers by IBM Z and LinuxONE.
 
-You are now ready to go to part2.
+You are now ready to go the [Step 2](https://github.com/guillaume-hoareau/protect-data-on-linuxone-with-pervasive-encryption/blob/master/part2.md).
