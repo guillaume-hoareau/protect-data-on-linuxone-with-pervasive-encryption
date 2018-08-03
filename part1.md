@@ -1,4 +1,4 @@
-# Welcome in Step 1 about Enabling Linux to use hardware encryption
+# Welcome in Step 1 about enabling Linux to use hardware encryption
 
 ## Agenda of this Step 1 is the following:
 1 - Introduction to the pervasive encryption
