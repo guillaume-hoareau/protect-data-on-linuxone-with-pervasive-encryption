@@ -24,21 +24,21 @@ In this Code Pattern, the following key architecture components are required:
 3. User to use a script in order to collect thanks to Linux crypto APIs.
 4. User to create crypto dashboard thanks to ELK.
 
-#Included components
+# Included components
 
 * IBM Cloud private
 * Ubuntu https://www.ubuntu.com/
 * LinuxONE Crypto https://www.ibm.com/it-infrastructure/linuxone/capabilities/secure-cloud
 
-#Featured technologies
+# Featured technologies
 
 * Docker
 * IBM LinuxOne
 * ELK https://www.elastic.co/fr/elk-stack
 
-#Steps
+# Steps
 
-##Step 1 - Enabling Linux to use hardware encryption
+## Step 1 - Enabling Linux to use hardware encryption
 
     1 - Introduction to the pervasive encryption
     2 - Introduction to the Linux crypto stack
@@ -46,12 +46,12 @@ In this Code Pattern, the following key architecture components are required:
     3 - Enabling OpenSSL and OpenSSH to use the hardware acceleration support
     4 - Checking Hardware Crypto functions
 
-##Step 2 - Build and deploy a docker image to IBM Cloud private
+## Step 2 - Build and deploy a docker image to IBM Cloud private
 
     Part 1 - Build the Docker image
     Part 2 - Deploy the docker image to IBM Cloud private
 
-##Step 3 - Instantiate the banking microservice from the IBM Cloud private catalog
+## Step 3 - Instantiate the banking microservice from the IBM Cloud private catalog
 
     Part 1 - Discover the Helm chart from the calalog
     Part 2 - Configure and install your banking microservice
