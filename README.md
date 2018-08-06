@@ -42,20 +42,29 @@ In this Code Pattern, the following key architecture components are required:
 
 ## Step 1 - Enabling Linux to use hardware encryption
 
-    1 - Introduction to the pervasive encryption
-    2 - Introduction to the Linux crypto stack
-    2 - Enabling Linux to use the Hardware
-    3 - Enabling OpenSSL and OpenSSH to use the hardware acceleration support
-    4 - Checking Hardware Crypto functions
+    1. Introduction to the pervasive encryption
+    2. Introduction to the Linux crypto stack
+    2. Enabling Linux to use the Hardware
+    3. Enabling OpenSSL and OpenSSH to use the hardware acceleration support
+    4. Checking Hardware Crypto functions
 
 ## Step 2 - Building and deploying ELK docker images to IBM Cloud private
 
-    Part 1 - Build the Docker image
-    Part 2 - Deploy the docker image to IBM Cloud private
+    1. Build Docker images
+    2. Deploying docker images to IBM Cloud private
 
-## Step 3 - Creating a crypto dashboard with ELK microservice from the IBM Cloud private catalog
+## Step 3 - Deploying ELK microservice from the IBM Cloud private catalog
 
-    Part 1 - Discover the Helm chart from the calalog
-    Part 2 - Configure and install your ELK microservices
-    Part 3 - Access your ELK microservice
-    Part 4 - Building your ELK crypto dashboard
+    1. Discover the Helm chart from the calalog
+    2. Configure and install your ELK microservices
+    3. Access your ELK microservice
+    4. Feeding your ELK crypto dashboard
+    
+## Step 4 - Creating a crypto dashboard with ELK microservice
+
+    1. Acceccing to Kibana
+    2. Sourcing the ElasticSearch DataSource
+    3. Creating your first search with Kibana
+    4. Creating your first charts with Kibana
+    5. Creating your first dashboard with Kibana
+    6. Realizing your first crypto dashboard with Kibana
